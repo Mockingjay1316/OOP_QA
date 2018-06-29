@@ -39,7 +39,6 @@
 </code>
 The output is "Wind::play".
 
-
 #### 2. Is it necessary to redefine a virtual function in derived class (派生类)? And is the keyword virtual necessary in redefining the virtual function in derived class?
 
 - No. If the base class is virtual, the derived class will automatically becomes virtual, whether it is needed to place the virtual keyword is case-dependent.
@@ -69,6 +68,7 @@ The output is "Wind::play".
 	  //[Error] overriding final function 'virtual void B::F()'
 	};
 </code>
+
 #### 4. What is the meaning of keyword override? What problem will be caused without it? Please give an example of a typical situation that keyword override is necessary.
 
 - Keyword overide asks the compiler to check whether the function is correctly overided.(which means hide the original function in the base class)
@@ -95,7 +95,6 @@ The output is "Wind::play".
 
 - Early binding: binding is performed during compilation before the program runs. General functions use early binging.
 - Late binding: binding occurs during runtime, according to the original type of the object. Late binding is enabled by virtual function, by declaring functions as virtual in base class. VPTR makes late binding possible. (which is also the reason why a polymorphic class uses more storage than class with same member variables but no virtual funtion)
-
 
 #### 6. What kind of functions are bond with early binding? And what functions are bond with late binding?
 
