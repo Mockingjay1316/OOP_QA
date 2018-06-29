@@ -49,7 +49,7 @@ The output is "Wind::play".
 - the derived class can't overload the virtual function, and it can avoid a class to be inherited.
 - Problem will occur when user overload a function improperly. When we don't want a class or virtual function be inherited or overloaded, we should use final.
 - Example: class B inherits from class A, and class C inherits from B. function F() is a virtual function in A and is overridden in B, while it is not expected to be overridden in B's child classes. Then we should use final for function F() in B for better safety.
-
+<code>
 	class A {
 	public:
 	  virtual void F() { cout << "A::F()" << endl; }
@@ -66,7 +66,7 @@ The output is "Wind::play".
 	  //Cause compile error.
 	  //[Error] overriding final function 'virtual void B::F()'
 	};
-
+</code>
 #### 4. What is the meaning of keyword override? What problem will be caused without it? Please give an example of a typical situation that keyword override is necessary.
 
 - Keyword overide asks the compiler to check whether the function is correctly overided.(which means hide the original function in the base class)
