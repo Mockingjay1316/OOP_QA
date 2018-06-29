@@ -2,8 +2,8 @@
 ##	Virtual function (虚函数)
 #### 1.	Please give an example to explain polymorphism (多态性).
 
-    #include <iostream>
-    using namespace std;
+	#include <iostream>
+	using namespace std;
 
 	enum note { middleC, Csharp, Eflat };
 	/**
