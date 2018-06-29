@@ -2,6 +2,7 @@
 ##	Virtual function (虚函数)
 #### 1.	Please give an example to explain polymorphism (多态性).
 <code>
+
 	#include <iostream>
 	using namespace std;
 
@@ -50,6 +51,7 @@ The output is "Wind::play".
 - Problem will occur when user overload a function improperly. When we don't want a class or virtual function be inherited or overloaded, we should use final.
 - Example: class B inherits from class A, and class C inherits from B. function F() is a virtual function in A and is overridden in B, while it is not expected to be overridden in B's child classes. Then we should use final for function F() in B for better safety.
 <code>
+
 	class A {
 	public:
 	  virtual void F() { cout << "A::F()" << endl; }
@@ -72,6 +74,7 @@ The output is "Wind::play".
 - Keyword overide asks the compiler to check whether the function is correctly overided.(which means hide the original function in the base class)
 - When we require polymorphism, override is necessary to tell others that we overridden the virtual function in the base class.
 <code>
+
 	class Man {
 	public:
 	  virtual void speak() { cout << "I am a man." << endl; }
@@ -122,6 +125,7 @@ The output is "Wind::play".
 - Some classes serve as APIs and are not implemented (and hence should not be constructed directly). So it is good to declare these classes' member functions "pure" to make the compiler recognize that the class is abstract.
 - Here's an example:
 <code>
+
 	class FileHandle {
 	public:
 	  void set_name();
@@ -150,6 +154,7 @@ The output is "Wind::play".
 
 #### 14. Please give an example where a derived class of an abstract class is still an abstract class.
 <code>
+
 	//Example:
 	class FileHandle {
 	public:
@@ -157,6 +162,7 @@ The output is "Wind::play".
 	   virtual void get_data() =0;
 	   virtual void process() = 0;
 	};
+
 	class RemoteFileHandle: public FileHandle {
 	public:
 	   void get_data();
