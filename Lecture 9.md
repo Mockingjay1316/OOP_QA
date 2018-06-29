@@ -1,6 +1,7 @@
 # Lecture 9
 ##	Virtual function (虚函数)
 #### 1.	Please give an example to explain polymorphism (多态性).
+<code>
 
 	#include <iostream>
 	using namespace std;
@@ -35,7 +36,7 @@
 	  Wind flute;
 	  tune(flute); // Upcasting
 	}
-
+</code>
 The output is "Wind::play".
 
 
@@ -50,6 +51,7 @@ The output is "Wind::play".
 - Problem will occur when user overload a function improperly. When we don't want a class or virtual function be inherited or overloaded, we should use final.
 - Example: class B inherits from class A, and class C inherits from B. function F() is a virtual function in A and is overridden in B, while it is not expected to be overridden in B's child classes. Then we should use final for function F() in B for better safety.
 <code>
+
 	class A {
 	public:
 	  virtual void F() { cout << "A::F()" << endl; }
@@ -71,6 +73,7 @@ The output is "Wind::play".
 
 - Keyword overide asks the compiler to check whether the function is correctly overided.(which means hide the original function in the base class)
 - When we require polymorphism, override is necessary to tell others that we overridden the virtual function in the base class.
+<code>
 
 	class Man {
 	public:
@@ -85,7 +88,7 @@ The output is "Wind::play".
 	void foo(Man& m) {
 	  m.speak();
 	}
-
+</code>
 
 ##	Late binding (后期绑定)
 #### 5. Please explain the difference between early binding and late binding.
